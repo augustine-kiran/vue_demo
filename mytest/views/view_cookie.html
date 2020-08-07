@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View Cookie</title>
+</head>
+<body>
+	<div id="app">
+		<p style="font-size: 20px;">Cookie value is <b>{{ email }}</b></p>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script>
+		const app = new Vue({
+			el: '#app',
+			data: {
+				email: '',
+			},
+			mounted() {
+				if (localStorage.email) {
+					this.email = localStorage.email;
+				}
+			},
+		});
+	</script>
+</body>
+</html>
